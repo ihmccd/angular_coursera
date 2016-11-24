@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="EatApp">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+<link rel="stylesheet" href="styles/bootstrap.min.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+      .green{background-color: lime; color: black; border-color: lime;}
+      .greenborder{border-color: lime;}
+      .red{background-color: maroon; color: white; }
+      .redborder{border-color: maroon;}
+    </style>
+  </head>
+<body ng-controller="EatAppController">
+   <div class="container" >
+     <h1>Lunch Checker</h1>
+         <div class="form-group">
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control" ng-model ='items' ng-class='someclassBorder'>
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click='sayMessage()' >Check If Too Much</button>
+         </div>
+         <div>(empty item doesn't count)</div>
+         <div class="form-group message" ng-class='someclassMessage'>
+           {{message}}
+         </div>
+   </div>
+
+</body>
+</html>
